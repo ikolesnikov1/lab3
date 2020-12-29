@@ -63,9 +63,9 @@ void Game::start() {
     ctx.model.addObserver(ctx.viewer);
     while (!ctx.model.isGameEnded()) {
         std::pair <int, int> move;
-        std::cout << "Now the move of " << (ctx.model.getSign() == MARKS ? 'x' : 'o') << std::endl;
+        std::cout << "Now the move of " << (ctx.model.getSign() == CROSS ? 'x' : 'o') << std::endl;
 
-        if (ctx.model.getSign() == MARKS) {
+        if (ctx.model.getSign() == CROSS) {
             if (firstOption == 1) {
                 std::cout << "Enter your move as <line> <column>: ";
             }

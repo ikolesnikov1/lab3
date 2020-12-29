@@ -9,10 +9,6 @@ States Model::getState() {
     return state;
 }
 
-char Model::getFrom(int i, int j) {
-    return field[i][j];
-}
-
 void Model::setState(States _state) {
     state = _state;
 
@@ -126,7 +122,7 @@ void Model::synchronize() {
 }
 
 Signs Model::getSign() {
-    return (curMove == 'x' ? MARKS : ZEROS);
+    return (curMove == 'x' ? CROSS : ZERO);
 }
 
 void Model::endGameIfOver() {

@@ -15,21 +15,16 @@ enum States {
 };
 
 enum Signs {
-    MARKS,
-    ZEROS
+    CROSS,
+    ZERO
 };
 
 class Model {
     States state;
-
     char curMove = 'x';
-
     std::list <Viewer> observers;
-
     void synchronize();
-
     void endGameIfOver();
-
 public:
     char field[3][3]{};
 
@@ -39,25 +34,16 @@ public:
                 field[i][j] = ' ';
             }
         }
-
         state = IN_PROGRESS;
     }
 
     bool isFree(int first, int second);
-
     States getState();
-
     Signs getSign();
-
     void setTo(int i, int j);
-
     void setState(States state);
-
     bool isGameEnded();
-
     void addObserver(Viewer viewer);
-
-    char getFrom(int i, int j);
 };
 
 class Viewer {
