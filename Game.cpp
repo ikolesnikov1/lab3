@@ -1,21 +1,22 @@
 #include "Game.h"
 #include <memory>
-#include "VersusHuman.h"
-#include "VersusAI.h"
+#include "Human.h"
+#include "AI.h"
 
 
 void Game::printHelp() {
-    std::cout << "You can choose 2 types of game:" << std::endl;
-    std::cout << "1. VS Human" << std::endl;
-    std::cout << "2. Vs AI" << std::endl;
+    std::cout << "You can choose 2 types of players:" << std::endl;
+    std::cout << "1. Human" << std::endl;
+    std::cout << "2. AI" << std::endl << std::endl;
 }
 
-int defineType() {
+int defineType(int numberOfPlayer) {
     bool undefined = true;
     int type;
 
     while (undefined) {
-        std::cout << "Enter the type of player: ";
+
+        std::cout << "Enter the type of player " << numberOfPlayer << ": " << std::endl;
         std::cin >> type;
         if (type > 2 || type < 1) {
             std::cout << "Wrong type!" << std::endl;
@@ -34,15 +35,15 @@ void Game::start() {
 
     printHelp();
 
-    int firstOption = defineType();
-    int secondOption = defineType();
+    int firstOption = defineType(1);
+    int secondOption = defineType(2);
 
     switch (firstOption) {
         case 1:
             first = std::make_unique<HumanPlayer>();
             break;
         case 2:
-            first = std::make_unique<VersusAI>(&ctx.model);
+            first = std::make_unique<AI>(&ctx.model);
             break;
         default:
             return;
@@ -53,7 +54,7 @@ void Game::start() {
             second = std::make_unique<HumanPlayer>();
             break;
         case 2:
-            second = std::make_unique<VersusAI>(&ctx.model);
+            second = std::make_unique<AI>(&ctx.model);
             break;
         default:
             return;

@@ -11,7 +11,7 @@ void Viewer::display(Model model) {
         }
         std::cout << std::endl;
         if (i < 2) {
-            std::cout <<"-----";
+            std::cout <<"---------";
             std::cout << std::endl;
         }
     }
