@@ -16,7 +16,7 @@ void Viewer::display(Model model) {
         }
     }
 
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 2; ++i) {
         std::cout << std::endl;
     }
 }

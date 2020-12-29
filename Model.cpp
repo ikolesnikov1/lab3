@@ -1,5 +1,4 @@
 #include "Context.h"
-#include "WrongMove.h"
 
 bool Model::isFree(int first, int second) {
     return field[first][second] == ' ';
@@ -11,7 +10,6 @@ States Model::getState() {
 
 void Model::setState(States _state) {
     state = _state;
-
     std::cout << "Final result:" << std::endl;
 }
 
@@ -21,7 +19,6 @@ void Model::setTo(int i, int j) {
     }
     field[i][j] = curMove;
     curMove = (curMove == 'x' ? 'o' : 'x');
-
     synchronize();
 }
 
@@ -31,7 +28,6 @@ int checkLines(char field[3][3]) {
             return i;
         }
     }
-
     return -1;
 }
 
@@ -41,7 +37,6 @@ int checkColumns(char field[3][3]) {
             return i;
         }
     }
-
     return -1;
 }
 
@@ -107,7 +102,6 @@ bool Model::isGameEnded() {
     }
 
     endGameIfOver();
-
     return true;
 }
 

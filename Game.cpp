@@ -4,7 +4,7 @@
 #include "AI.h"
 
 
-void Game::printHelp() {
+void Game::info() {
     std::cout << "You can choose 2 types of players:" << std::endl;
     std::cout << "1. Human" << std::endl;
     std::cout << "2. AI" << std::endl << std::endl;
@@ -33,7 +33,7 @@ void Game::start() {
     std::unique_ptr<Player> first;
     std::unique_ptr<Player> second;
 
-    printHelp();
+    info();
 
     int firstOption = defineType(1);
     int secondOption = defineType(2);

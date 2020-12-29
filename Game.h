@@ -4,6 +4,6 @@
 class Game {
     Context ctx;
 public:
+    static void info();
     void start();
-    static void printHelp();
 };
